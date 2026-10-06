@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Handler
 import android.os.Looper
 import android.provider.MediaStore
+import android.view.View
 import androidx.annotation.OptIn
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
@@ -38,16 +39,21 @@ class MagnifyState {
     var lastPhoto: Bitmap? = null
     var lastUri: Uri? = null
     var camera: Camera? = null
+    var view: View? = null
     var imageCapture: ImageCapture? = null
 
     val z: Float get() = if (photo != null) photoScale else zoom
 
     fun setZ(v: Float) {
-        if (photo != null) photoScale = v.coerceIn(1f, 30f)
-        else {
-            val c = v.coerceIn(minZoom, maxZoom)
-            zoom = c
-            camera?.cameraControl?.setZoomRatio(c)
+        val old = z
+        val inPhoto = photo != null
+        val lo = if (inPhoto) 1f else minZoom
+        val hi = if (inPhoto) 30f else maxZoom
+        val c = v.coerceIn(lo, hi)
+        if (inPhoto) photoScale = c else { zoom = c; camera?.cameraControl?.setZoomRatio(c) }
+        if (c != old) {
+            if (v < lo || v > hi) Haptics.limit(view)
+            else if ((old * 2).toInt() != (c * 2).toInt()) Haptics.tick(view)
         }
     }
     val zoomFraction: Float

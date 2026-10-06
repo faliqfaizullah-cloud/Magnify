@@ -14,4 +14,9 @@ Kotlin + Jetpack Compose + CameraX + ML Kit (on-device OCR).
 - Effects for low-contrast text: High contrast, Invert, Yellow on black, Grayscale
 - Auto brightness in low light (exposure is raised automatically); flashlight toggle
 - Glass UI, full screen, fluid layout; sidebar button collapses the left panel
-# Magnify
+
+## v1.1
+- Phone layout (<600dp wide): big camera card with shutter button, small cards below, side panel becomes a slide-in drawer. Tablets/landscape keep the side-by-side layout.
+- 44dp+ touch targets, larger text, keyboard-aware (search field stays visible), press-scale animation.
+- Haptics: tap, zoom ticks, zoom-limit buzz, shutter, photo-ready and text-found confirmation.
+- v1.2: new app icon (your artwork, transparent background, adaptive).
