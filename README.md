@@ -14,3 +14,4 @@ Kotlin + Jetpack Compose + CameraX + ML Kit (on-device OCR).
 - Effects for low-contrast text: High contrast, Invert, Yellow on black, Grayscale
 - Auto brightness in low light (exposure is raised automatically); flashlight toggle
 - Glass UI, full screen, fluid layout; sidebar button collapses the left panel
+# Magnify
