@@ -424,7 +424,7 @@ fun FiltersSheet(vm: MagnifyState, modifier: Modifier) {
                     1 -> SliderRow(vm.contrast, 0.5f..2.5f, "${(vm.contrast * 100).roundToInt()}%") { vm.contrast = it }
                     else -> {
                         val v = if (vm.photo != null) vm.brightness else vm.exposure
-                        SliderRow(v, 0f..1f, "${(v * 100).roundToInt()}%") { vm.setBrightness(it) }
+                        SliderRow(v, 0f..1f, "${(v * 100).roundToInt()}%") { vm.applyBrightness(it) }
                     }
                 }
             }

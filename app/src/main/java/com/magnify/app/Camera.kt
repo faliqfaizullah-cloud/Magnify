@@ -91,7 +91,7 @@ class MagnifyState {
         }
     }
 
-    fun setBrightness(f: Float) {
+    fun applyBrightness(f: Float) {
         autoBrightness = false
         if (photo != null) { brightness = f; return }
         exposure = f
