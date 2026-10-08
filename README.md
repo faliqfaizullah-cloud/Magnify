@@ -20,3 +20,9 @@ Kotlin + Jetpack Compose + CameraX + ML Kit (on-device OCR).
 - 44dp+ touch targets, larger text, keyboard-aware (search field stays visible), press-scale animation.
 - Haptics: tap, zoom ticks, zoom-limit buzz, shutter, photo-ready and text-found confirmation.
 - v1.2: new app icon (your artwork, transparent background, adaptive).
+
+## v1.4 – Magnifier-style UI
+- Full-screen camera, round flip-camera / flashlight buttons, − [shutter] + (hold to keep zooming)
+- Bottom bar: filters button, "Find text" pill with voice search, photo-picker button
+- Filters sheet: Filters / Contrast / Brightness tabs, live thumbnails, More settings
+- Search highlights matching words on the live view, on captured photos and on photos picked from the gallery
